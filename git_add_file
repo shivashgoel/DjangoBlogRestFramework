@@ -1,0 +1,14 @@
+#!/bin/bash
+if [[ $# -ne 3 ]]
+then
+echo "First Argument is File Name"
+echo "Second Argument is Message"
+echo "Third Argument is link for Git Repository"
+exit 1
+else
+git init
+git add $1
+git commit -m "Commit for $2"
+git remote add origin $3
+git push -u origin master
+fi
